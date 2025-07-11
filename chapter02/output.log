@@ -1,2 +1,3 @@
-REPOSITORY   TAG       IMAGE ID       CREATED              SIZE
-test-image   latest    00c530138bba   About a minute ago   117MB
+CONTAINER ID   IMAGE        COMMAND           CREATED              STATUS              PORTS     NAMES
+a1997927ae65   test-image   "python app.py"   About a minute ago   Up About a minute             api-container
+43bdd54dc55a   test-image   "python app.py"   About a minute ago   Up About a minute             curl-container
