@@ -9,5 +9,7 @@
 # docker run -ti -d --name="api-container" test-image
 # docker ps | tee output.log
 
-# コンテナ "api-container" の IP アドレスを取得
-docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' api-container
+# # コンテナ "api-container" の IP アドレスを取得
+# docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' api-container
+
+docker exec -ti curl-container sh
