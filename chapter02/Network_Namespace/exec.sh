@@ -3,4 +3,9 @@
 # sudo ip netns add netns0
 # sudo ip netns show | tee output.log
 
-sudo ip netns exec netns0 ip link show | tee output.log
+# sudo ip netns exec netns0 ip link show | tee output.log
+
+# sudo ip link add name veth0_container type veth peer name veth0_br
+# sudo ip link add name veth1_host type veth peer name veth1_br
+
+ip link | tee output.log
