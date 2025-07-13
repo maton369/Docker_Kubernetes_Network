@@ -39,6 +39,9 @@
 # arp
 
 # コンテナを停止
-docker stop curl-container api-container
+# docker stop curl-container api-container
 # 停止済みのコンテナを削除
-docker rm curl-container api-container
+# docker rm curl-container api-container
+
+ip netns add netns0
+ip netns show | tee output.log

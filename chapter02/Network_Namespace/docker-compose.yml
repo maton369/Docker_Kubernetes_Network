@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  netns:
+    build: .
+    container_name: netns-env
+    privileged: true
+    stdin_open: true
+    tty: true
+    volumes:
+      - ../exec.sh:/workspace/exec.sh
