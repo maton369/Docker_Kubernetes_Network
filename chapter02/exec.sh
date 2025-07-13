@@ -19,15 +19,21 @@
 # api-container を再起動
 # docker restart api-container
 
-{
-  echo "curl-container IP:"
-  docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' curl-container
-  echo "curl-container MAC:"
-  docker inspect --format='{{range .NetworkSettings.Networks}}{{.MacAddress}}{{end}}' curl-container
-  echo ""
+# {
+#   echo "curl-container IP:"
+#   docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' curl-container
+#   echo "curl-container MAC:"
+#   docker inspect --format='{{range .NetworkSettings.Networks}}{{.MacAddress}}{{end}}' curl-container
+#   echo ""
 
-  echo "api-container IP:"
-  docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' api-container
-  echo "api-container MAC:"
-  docker inspect --format='{{range .NetworkSettings.Networks}}{{.MacAddress}}{{end}}' api-container
-} | tee output.log
+#   echo "api-container IP:"
+#   docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' api-container
+#   echo "api-container MAC:"
+#   docker inspect --format='{{range .NetworkSettings.Networks}}{{.MacAddress}}{{end}}' api-container
+# } | tee output.log
+
+docker exec -ti curl-container sh
+curl 172.17.0.3:5000
+arp
+docker exec -ti api-container sh
+arp

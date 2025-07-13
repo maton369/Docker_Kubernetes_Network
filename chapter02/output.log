@@ -1,9 +1,5 @@
-curl-container IP:
-172.17.0.2
-curl-container MAC:
-d2:82:ed:7e:dc:65
+? (172.17.0.3) at c2:1e:a7:36:29:2b [ether]  on eth0
+? (172.17.0.1) at a6:ad:ff:05:01:19 [ether]  on eth0
 
-api-container IP:
-172.17.0.3
-api-container MAC:
-c2:1e:a7:36:29:2b
+? (172.17.0.1) at a6:ad:ff:05:01:19 [ether]  on eth0
+? (172.17.0.2) at d2:82:ed:7e:dc:65 [ether]  on eth0
