@@ -32,8 +32,13 @@
 #   docker inspect --format='{{range .NetworkSettings.Networks}}{{.MacAddress}}{{end}}' api-container
 # } | tee output.log
 
-docker exec -ti curl-container sh
-curl 172.17.0.3:5000
-arp
-docker exec -ti api-container sh
-arp
+# docker exec -ti curl-container sh
+# curl 172.17.0.3:5000
+# arp
+# docker exec -ti api-container sh
+# arp
+
+# コンテナを停止
+docker stop curl-container api-container
+# 停止済みのコンテナを削除
+docker rm curl-container api-container
