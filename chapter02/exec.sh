@@ -15,6 +15,19 @@
 # docker exec -ti curl-container sh
 
 # curl-container を再起動
-docker restart curl-container
+# docker restart curl-container
 # api-container を再起動
-docker restart api-container
+# docker restart api-container
+
+{
+  echo "curl-container IP:"
+  docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' curl-container
+  echo "curl-container MAC:"
+  docker inspect --format='{{range .NetworkSettings.Networks}}{{.MacAddress}}{{end}}' curl-container
+  echo ""
+
+  echo "api-container IP:"
+  docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' api-container
+  echo "api-container MAC:"
+  docker inspect --format='{{range .NetworkSettings.Networks}}{{.MacAddress}}{{end}}' api-container
+} | tee output.log
