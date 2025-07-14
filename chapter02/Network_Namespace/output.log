@@ -1,2 +1,30 @@
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: tunl0@NONE: <NOARP> mtu 1480 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/ipip 0.0.0.0 brd 0.0.0.0
+3: gre0@NONE: <NOARP> mtu 1476 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/gre 0.0.0.0 brd 0.0.0.0
+4: gretap0@NONE: <BROADCAST,MULTICAST> mtu 1462 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/ether 00:00:00:00:00:00 brd ff:ff:ff:ff:ff:ff
+5: erspan0@NONE: <BROADCAST,MULTICAST> mtu 1450 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/ether 00:00:00:00:00:00 brd ff:ff:ff:ff:ff:ff
+6: ip_vti0@NONE: <NOARP> mtu 1480 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/ipip 0.0.0.0 brd 0.0.0.0
+7: ip6_vti0@NONE: <NOARP> mtu 1428 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/tunnel6 :: brd :: permaddr 9e12:e1f1:6c60::
+8: sit0@NONE: <NOARP> mtu 1480 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/sit 0.0.0.0 brd 0.0.0.0
+9: ip6tnl0@NONE: <NOARP> mtu 1452 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/tunnel6 :: brd :: permaddr 9ef2:d521:86c4::
+10: ip6gre0@NONE: <NOARP> mtu 1448 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/gre6 :: brd :: permaddr 2a57:ee17:aec7::
+11: eth0@if333: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP mode DEFAULT group default 
+    link/ether 5e:e2:60:a0:1c:86 brd ff:ff:ff:ff:ff:ff link-netnsid 0
+12: veth0_br@if13: <BROADCAST,MULTICAST> mtu 1500 qdisc noop master bridge0 state DOWN mode DEFAULT group default qlen 1000
+    link/ether a6:ff:29:94:47:53 brd ff:ff:ff:ff:ff:ff link-netns netns0
+14: veth1_br@veth1_host: <BROADCAST,MULTICAST,M-DOWN> mtu 1500 qdisc noop master bridge0 state DOWN mode DEFAULT group default qlen 1000
+    link/ether f2:a0:02:57:73:0f brd ff:ff:ff:ff:ff:ff
+15: veth1_host@veth1_br: <BROADCAST,MULTICAST,M-DOWN> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/ether da:6d:54:54:63:19 brd ff:ff:ff:ff:ff:ff
 16: bridge0: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
-    link/ether 46:6b:11:b9:fe:3e brd ff:ff:ff:ff:ff:ff
+    link/ether a6:ff:29:94:47:53 brd ff:ff:ff:ff:ff:ff
