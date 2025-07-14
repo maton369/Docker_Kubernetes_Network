@@ -11,5 +11,7 @@
 # ip link | tee output.log
 
 # sudo ip link set dev veth0_container netns netns0
+# sudo ip netns exec netns0 ip link show | tee output.log
 
-sudo ip netns exec netns0 ip link show | tee output.log
+# sudo ip link add name bridge0 type bridge
+ip link show bridge0 | tee output.log
