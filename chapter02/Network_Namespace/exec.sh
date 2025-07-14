@@ -16,6 +16,11 @@
 # sudo ip link add name bridge0 type bridge
 # ip link show bridge0 | tee output.log
 
-sudo ip link set dev veth0_br master bridge0
-sudo ip link set dev veth1_br master bridge0
-ip link | tee output.log
+# sudo ip link set dev veth0_br master bridge0
+# sudo ip link set dev veth1_br master bridge0
+# ip link | tee output.log
+
+# 仮想インターフェース veth0_container に IP アドレスを割り当て
+sudo ip netns exec netns0 ip address add 192.168.0.1/24 dev veth0_container
+# 割り当てたアドレスを確認（状態表示）
+sudo ip netns exec netns0 ip address show veth0_container | tee output.log
