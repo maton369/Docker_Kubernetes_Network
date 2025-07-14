@@ -14,4 +14,8 @@
 # sudo ip netns exec netns0 ip link show | tee output.log
 
 # sudo ip link add name bridge0 type bridge
-ip link show bridge0 | tee output.log
+# ip link show bridge0 | tee output.log
+
+sudo ip link set dev veth0_br master bridge0
+sudo ip link set dev veth1_br master bridge0
+ip link | tee output.log
