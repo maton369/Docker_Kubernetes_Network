@@ -1,4 +1,4 @@
-15: veth1_host@veth1_br: <BROADCAST,MULTICAST,M-DOWN> mtu 1500 qdisc noop state DOWN group default qlen 1000
-    link/ether da:6d:54:54:63:19 brd ff:ff:ff:ff:ff:ff
-    inet 192.168.0.2/24 scope global veth1_host
+16: bridge0: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether a6:ff:29:94:47:53 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.0.254/24 brd 192.168.0.255 scope global bridge0
        valid_lft forever preferred_lft forever

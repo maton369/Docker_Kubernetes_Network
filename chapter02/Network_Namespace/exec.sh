@@ -26,6 +26,11 @@
 # sudo ip netns exec netns0 ip address show veth0_container | tee output.log
 
 # veth1_host に IP アドレスを割り当てる（要 root 権限）
-sudo ip address add 192.168.0.2/24 dev veth1_host
+# sudo ip address add 192.168.0.2/24 dev veth1_host
 # veth1_host のインターフェース情報を表示
-ip address show veth1_host | tee output.log
+# ip address show veth1_host | tee output.log
+
+# bridge0 インターフェースに IP アドレスを割り当て（ブロードキャストアドレスとラベルを指定）
+sudo ip address add 192.168.0.254/24 broadcast 192.168.0.255 label bridge0 dev bridge0
+# bridge0 インターフェースの状態とアドレス情報を表示
+ip address show bridge0 | tee output.log
