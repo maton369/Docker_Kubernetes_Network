@@ -21,6 +21,11 @@
 # ip link | tee output.log
 
 # 仮想インターフェース veth0_container に IP アドレスを割り当て
-sudo ip netns exec netns0 ip address add 192.168.0.1/24 dev veth0_container
+# sudo ip netns exec netns0 ip address add 192.168.0.1/24 dev veth0_container
 # 割り当てたアドレスを確認（状態表示）
-sudo ip netns exec netns0 ip address show veth0_container | tee output.log
+# sudo ip netns exec netns0 ip address show veth0_container | tee output.log
+
+# veth1_host に IP アドレスを割り当てる（要 root 権限）
+sudo ip address add 192.168.0.2/24 dev veth1_host
+# veth1_host のインターフェース情報を表示
+ip address show veth1_host | tee output.log
