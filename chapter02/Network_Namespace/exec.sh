@@ -53,9 +53,13 @@
 #   echo "veth0_container (in netns0) up"
 # } 2>&1 | tee output.log
 
-sudo ip netns exec netns0 ping -c1 192.168.0.2 | tee output.log
-echo "¥n" >> output.log
-sudo ip netns exec netns0 ping -c1 192.168.0.254 | tee -a output.log
-echo "¥n" >> output.log
-ping -c1 192.168.0.1 | tee -a output.log
-echo "¥n" >> output.log
+# sudo ip netns exec netns0 ping -c1 192.168.0.2 | tee output.log
+# echo "¥n" >> output.log
+# sudo ip netns exec netns0 ping -c1 192.168.0.254 | tee -a output.log
+# echo "¥n" >> output.log
+# ping -c1 192.168.0.1 | tee -a output.log
+# echo "¥n" >> output.log
+
+sudo ip netns delete netns0
+sudo ip link delete dev bridge0
+sudo ip link delete dev veth1_br
