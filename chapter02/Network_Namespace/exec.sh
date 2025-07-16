@@ -31,6 +31,24 @@
 # ip address show veth1_host | tee output.log
 
 # bridge0 インターフェースに IP アドレスを割り当て（ブロードキャストアドレスとラベルを指定）
-sudo ip address add 192.168.0.254/24 broadcast 192.168.0.255 label bridge0 dev bridge0
+# sudo ip address add 192.168.0.254/24 broadcast 192.168.0.255 label bridge0 dev bridge0
 # bridge0 インターフェースの状態とアドレス情報を表示
-ip address show bridge0 | tee output.log
+# ip address show bridge0 | tee output.log
+
+{
+  echo "=== インターフェースの有効化 ==="
+  sudo ip link set bridge0 up
+  echo "bridge0 up"
+
+  sudo ip link set veth0_br up
+  echo "veth0_br up"
+
+  sudo ip link set veth1_host up
+  echo "veth1_host up"
+
+  sudo ip link set veth1_br up
+  echo "veth1_br up"
+
+  sudo ip netns exec netns0 ip link set veth0_container up
+  echo "veth0_container (in netns0) up"
+} 2>&1 | tee output.log
